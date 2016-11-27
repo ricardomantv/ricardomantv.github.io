@@ -37,6 +37,36 @@
       </div>
 
       <div class="container">
+        <h2>Overview</h2>
+        <p>These character rigs were the two projects made throughout my Character Rigging for Production class.
+        </p>
+        <h2>Intent</h2>
+        <p>The first character is a simple humanoid character that was used to teach the fundamentals of character rigging, like
+           creating FK/IK controls for the arms and legs, movement controls for the head and torso, setting up custom pose controls,
+           and space switching and dynamic parenting. The second character, Ray, is a more traditional 3D model that would have to
+           be rigged. This rig features all of the controls from the previous character, but also includes techniques like skin weight
+           painting, corrective blendshapes, a facial rig control scheme, and extra general character options like scaling.
+        </p>
+        <h2>Process</h2>
+        <p>The arms and legs of the characters have both FK (Forward Kinematic) controls that allow animators to influence parts of the
+           arm/leg separately and IK (Inverse Kinematic) controls that control the entire arm/leg with one control. The characters also
+           have a meta control located near each arm/leg that allows the user to switch between using thier respective FK/IK control.
+         </p>
+         <p>The Ray character's mesh is bound to the joint skeleton system through the Heat Map skinning algorithm. While this does a
+            good job of binding the mesh and joints together, it is not perfect and some joint-skin influences still need to be edited,
+            which is done through skin weight painting. I used this technique to paint how much influence specific joints have over
+            vertices of the 3D model when moved, with black representing no influence and white representing a maximum influence. For
+            example, the shoulder joint of a model will have complete influence over the skin directly next to the joint, but have a slowly
+            decreasing amount of influence over vertices that are farther away from the shoulder. This technique is applied to almost
+            every single joint in the skeleton so that the rig can be animated with the most realistic-looking movement possible.
+          </p>
+          <p>Ray also uses a Delta Mush deformer and Corrective Blendshapes to further tweak his mesh for poses that painting skin weights
+             alone cannot fix. 
+          </p>
+        <h2>Product</h2>
+        <p>The first character is complete, and the Autodesk Maya file can be found <a href="#">here</a>.</p>
+        <p>The Ray character is still in progress, but the latest version of the rig can be downloaded <a href="#">here</a>.</p>
+        <p><em>Note: These files both require Autodesk Maya to open.</em></p>
       </div>
     </div>
 
