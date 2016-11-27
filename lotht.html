@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ricardo Tucker | LotHT: The Booth Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Ricardo Tucker</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Work <span class="sr-only">(current)</span></a></li>
+            <li><a href="side.html">Side Projects</a></li>
+            <li><a href="about.html">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <div class="page-header">
+        <h1>Legends of the Hidden Temple: The Booth Game</h1>
+        <hr class="rule">
+      </div>
+
+      <div class="container">
+        <div class="image">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/w1DpMpn2OCI" frameborder="0" allowfullscreen></iframe>
+          <p class="image-caption">Trailer for the Legends Booth Game</p>
+        </div>
+        <h2>Overview</h2>
+        <p><strong><em>Collaborators:</em></strong> Kevin Karol</p>
+        <p><strong><em>Role:</em></strong> Game Programmer
+        <p><strong><em>Awards:</em></strong> 2nd Place Booth, Fraternity Division, Carnegie Mellon Spring Carnival 2016</p>
+        <p>Legends of the Hidden Temple: The Booth Game was a part of Sigma Phi Epsilon fraternity's booth for the annual CMU Spring Carnival in 2016.
+           In accordance to the overall Carnival theme, Game Night, the booth was modeled after the 90's television game show, Legends of the Hidden Temple.
+        </p>
+        <h2>Intention</h2>
+        <p>The experience that Kevin and I wanted players to get out of this game was the feeling of actually being on a game show. While the exact game
+           we created was never featured on the actual Legends of the Hidden Temple show, the feeling of adrenaline and pressure to complete a task while under a
+           timer is one that is incredibly common on any type of game show. Lots of flashing lights, blaring game music, and a system of cameras live-streaming
+           players to a television in another room of the booth all added to this experience.
+        </p>
+        <p>The game features six light-up animals and buttons, one that represents each of the 6 teams in Legends of the Hidden Temple. While the game is in session,
+           these buttons will light up and it is the players' goal to hit as many of these lit buttons as they can in 60 seconds. Players can select one of two game modes:
+           Child or Adult, where in Child mode only the lower three buttons will light up (as the higher buttons might be out of reach) and buttons will only ever light up
+           one at a time, while in Adult mode all buttons are in play and will eventually will light up two at a time (both must be pressed simultaneously to count).
+        </p>
+        <h2>Process</h2>
+        <p>The technical aspects of the game were split up into two parts, the main game process that ran off of a Raspberry Pi and the asthetics (programmatic lights, camera live feed, etc.)
+           that were handled by a Dell computer. I worked on the Raspberry Pi game process of the project.
+        </p>
+        <p>The bare-bones system of the game consists of four parts: the Raspberry Pi itself, 6 different buttons, and lightbulbs that drew power from an ethernet controllable power strip.
+           The buttons were connected to the Raspberry Pi's GPIO (General-Purpose Input/Output) pins to determine when they had been pressed by a player. The Raspberry Pi was connected to the
+           power strip via ethernet cable, and could send HTTP requests to the strip to toggle specific outlets of the strip to run power through. Connecting the lightbulbs to this strip let
+           me control them via requests from the Raspberry Pi.
+        </p>
+        <div class="image">
+          <img src="img/lotht/button.jpg" alt="Arcade button used in the game">
+          <p class="image-caption">The arcade button used in the Legends Booth Game, purchased from <a href="https://www.adafruit.com/products/1185?gclid=Cj0KEQiAguXBBRCE_pbQ5reuq8MBEiQANji2LUn1VP9spEzKjZgdfTJKQVsatrj0PyOdyvm_hE7q4aAaAnLb8P8HAQ">Adafruit</a>
+        </div>
+        <p>A Python script on the Raspberry Pi ran the overall game process. When the game starts, the script starts a 60 second timer and will send an HTTP request to a randomly selected
+           outlet on the power strip. A separate thread sat and waited for button inputs from the Pi's GPIO pins, and when the button corresponding to the currently active lightbulb was
+           pressed, the script would send a request to turn off the active light and randomly select a new light to make active. In the game's Adult mode, the script eventually begins to
+           select two lightbulbs to make active at a time, and waits for signals from the two corresponding buttons to be sent within 500ms of each other to continue.
+        </p>
+        <h2>Product</h2>
+        <p>The game was featured in Sigma Phi Epsilon's booth for the entirety of Carnival 2016, which ran from Thursday April 14th through Sunday, April 17th. Unfortunately, the game
+           had to be torn down along with the rest of the booth at the end of Carnival, but it lives on in my heart and also the videos Kevin took.
+        </p>
+        <div class="image">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/puwgY1SeGvM" frameborder="0" allowfullscreen></iframe>
+          <p class="image-caption">A 360 video of the Legends Booth Game in action</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+  </body>
+  <hr class="rule">
+  <footer>
+    <p>&copy; Ricardo Tucker</p>
+  </footer>
+</html>

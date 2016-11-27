@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ricardo Tucker | Island Exploration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Ricardo Tucker</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Work <span class="sr-only">(current)</span></a></li>
+            <li><a href="side.html">Side Projects</a></li>
+            <li><a href="about.html">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <div class="page-header">
+        <h1>Island Exploration</h1>
+        <hr class="rule">
+      </div>
+
+      <div class="container">
+        <div class="image">
+          <img src="img/island/island.png" alt="A view of the island">
+          <p class="image-caption">An aerial view of the island (preview video coming soon)</p>
+        </div>
+        <h2>Overview</h2>
+        <p><strong><em>Collaborators:</em></strong> Hunter "Smokey" Dyar, Omar Cheikh-Ali, Yang-Che Tang</p>
+        <p><strong><em>Role:</em></strong> Lead Programmer</p>
+        <p>Island Exploration is a virtual reality research project where our group is developing a new means to allow a user to travel in a
+           virtual space that is much larger than their physical space. In this HTC Vive application, users explore an island that consists of
+           several different room-sized areas for them to discover, but the island itself is about the same scale as a physical island. In order
+           to visit areas outside the reach of their real-world physical space, users can scale themselves up to a point where the their
+           physical space spans across the entire island. Once a player reaches the approximate area where they'd like to explore, they can procede
+           to scale themselves back down to a normal size and begin interacting with that area of the island.
+        </p>
+        <p><em>Note: This project is still in production, so this page will continue to be updated until its completion.</em></p>
+        <h2>Intention</h2>
+        <p>Although the main focus of this project is the scaling mechanic, we did not want the "gameplay" of the island application to center around
+           the usage of this function. There is a simple tutorial at the start area of the game to teach users how the mechanic works, but otherwise
+           there is no mention of the mechanic at all again. The goal of this project is to have the scaling mechanic feel intuitive enough to the
+           user that it won't break their immersion in the island experience whenever they have to use the mechanic.
+        </p>
+        <h2>Process</h2>
+        <p>Island Exploration was made using the Unity game engine with the built-in OpenVR packages, used in conjunction with the Vive and SteamVR.
+           Unity provides a GameObject (primitive object type in Unity) that represents the physical play space of the Vive. Since other Vive controls
+           like the player's vision and controller objects are also linked to this GameObject, manipulating the GameObject will also influence these
+           other controls. Scaling the GameObject at runtime will cause the player to feel like they are scaling up and down by the same factor.
+        </p>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/island/med_playspace.png" alt="Play space at medium scale">
+              <p class="image-caption">The play space at a medium scale, for selecting points of interest on the map.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/island/large_playspace.png" alt="Play space at large scale">
+              <p class="image-caption">The play space at the largest scale, encompassing the whole island.</p>
+            </div>
+          </div>
+        </div>
+        <p>Scaling works in a tree-like level-based system. The island is broken down into chunks based on the various
+           points of interest.
+        </p>
+        <h2>Product</h2>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+  </body>
+  <hr class="rule">
+  <footer>
+    <p>&copy; Ricardo Tucker</p>
+  </footer>
+</html>
