@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Media Synthesis Final</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body onload="load_page();">
+    <div id="container">
+      <div id="main-panel">
+        <!-- Hover interactables -->
+        <div id="painting-div">
+          <img src="fg/painting.png" onmouseover="painting_hover(this);"
+               onmouseout="painting_unhover(this);"/>
+        </div>
+        <div id="machine-div">
+          <img src="fg/machine.png" onmouseover="machine_hover(this);"
+               onmouseout="machine_unhover(this);"/>
+        </div>
+
+        <!-- Click interactables -->
+        <div id="lock-div">
+          <img src="fg/lock.png" onclick="lock_start();" id="lock"/>
+        </div>
+        <div id="bell-div">
+          <img src="fg/bell.png" onclick="bell_start();" id="bell"/>
+        </div>
+        <div id="journal-div">
+          <img src="fg/journal.png" onclick="journal_open();" id="journal"/>
+        </div>
+        <div id="music-div">
+          <img src="fg/music-box.png" onclick="box_start();" id="box"/>
+        </div>
+        <div id="notes-div">
+            <img src="fg/notes.png" onclick="notes_open();" id="notes"/>
+          </a>
+        </div>
+
+        <!-- Non interactive -->
+        <div id="bed-div">
+          <img src="fg/beds.png"/>
+        </div>
+        <div id="binoculars-div">
+          <img src="fg/non-interactable.png"/>
+        </div>
+        <div id="chest-div">
+          <img src="fg/chest.png"/>
+        </div>
+        <div id="drawer-div">
+          <img src="fg/drawer.png"/>
+        </div>
+        <div id="holder-div">
+          <img src="fg/bell-holder.png"/>
+        </div>
+        <div id="rug-div">
+          <img src="fg/rug.png"/>
+        </div>
+        <div id="table-div">
+          <img src="fg/table.png"/>
+        </div>
+        <div id="web-div">
+          <img src="fg/spider-web.png"/>
+        </div>
+        <div id="window-div">
+          <img src="anim/GIFs/window.gif" id="window"/>
+        </div>
+      </div>
+      <div id="side-panel">
+        <div id="mute-div">
+          <button type="button" onclick="mute();" id="mute">
+            <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop Ups -->
+    <div id="journal-popup" data-role="popup">
+      <img src="popup-random/journal-popup.png" onclick="journal_close();"/>
+    </div>
+    <div id="notes-popup" data-role="popup">
+      <img src="anim/GIFs/notes.gif" onclick="notes_close();" id="big_notes"/>
+    </div>
+    <div id="dipper-popup" data-role="popup">
+      <img src="popup-random/dipper.png" id="dipper"/>
+    </div>
+    <div id="mabel-popup">
+      <img src="popup-random/mabel.png" id="mabel"/>
+    </div>
+  </body>
+</html>

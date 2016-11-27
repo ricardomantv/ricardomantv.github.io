@@ -1,0 +1,203 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+span.glyphicon {
+  font-size: 2em;
+}
+
+button {
+  background-color: black;
+  border: none;
+}
+
+#container {
+  display: flex;
+  /* margin: 0 auto; */
+}
+
+#main-panel {
+  background: url('../bg/attic.jpg');
+  background-repeat: no-repeat;
+  width: 957px;
+  height: 685px;
+}
+
+#side-panel {
+  width: 100px;
+  height: 200px;
+}
+
+#bed-div {
+  position: absolute;
+  left: 140px;
+  top: 387px;
+  width: 739px;
+  height: 154px;
+  z-index: 2;
+}
+
+#bell-div {
+  position: absolute;
+  left: 595px;
+  top: 167px;
+  width: 74px;
+  height: 63px;
+  z-index: 1;
+}
+
+#binoculars-div {
+  position: absolute;
+  left: 181px;
+  top: 204px;
+  width: 192px;
+  height: 346px;
+  z-index: 0;
+}
+
+#chest-div {
+  position: absolute;
+  left: 725px;
+  top: 484px;
+  width: 206px;
+  height: 173px;
+  z-index: 3;
+}
+
+#dipper-popup {
+  position: absolute;
+  left: 250px;
+  top: 290px;
+  z-index: 5;
+  display: none;
+}
+
+#drawer-div {
+  position: absolute;
+  left: 509px;
+  top: 345px;
+  width: 133px;
+  height: 133px;
+  z-index: 0;
+}
+
+#holder-div {
+  position: absolute;
+  left: 621px;
+  top: 128px;
+  z-index: 0;
+}
+
+#journal-div {
+  position: absolute;
+  left: 420px;
+  top: 367px;
+  width: 114px;
+  height: 45px;
+  z-index: 3;
+}
+
+#journal-popup {
+  position: absolute;
+  display: none;
+  left: 167px;
+  top: 128px;
+  width: 561px;
+  height: 390px;
+  z-index: 5;
+}
+
+#lock-div {
+  position: absolute;
+  left: 764px;
+  top: 548px;
+  width: 38px;
+  height: 43px;
+  z-index: 4;
+}
+
+#mabel-popup {
+  position: absolute;
+  left: 600px;
+  top: 325px;
+  z-index: 5;
+  display: none;
+}
+
+#machine-div {
+  position: absolute;
+  left: 2px;
+  top: 240px;
+  width: 137px;
+  height: 311px;
+}
+
+#music-div {
+  position: absolute;
+  left: 512px;
+  top: 319px;
+  width: 63px;
+  height: 56px;
+  z-index: 1;
+}
+
+#notes-div {
+  position: absolute;
+  left: 680px;
+  top: 307px;
+  width: 109px;
+  height: 85px;
+}
+
+#notes-popup{
+  position: absolute;
+  display: none;
+  left: 260px;
+  top: 140px;
+  width: 390px;
+  height: 453px;
+  z-index: 5;
+}
+
+#painting-div {
+  position: absolute;
+  left: 137px;
+  top: 192px;
+  width: 133px;
+  height: 175px;
+  z-index: 1;
+}
+
+#rug-div {
+  position: absolute;
+  left: 265px;
+  top: 511px;
+  width: 304px;
+  height: 116px;
+}
+
+#table-div {
+  position: absolute;
+  left: 328px;
+  top: 390px;
+  width: 221px;
+  height: 102px;
+  z-index: 1;
+}
+
+#web-div {
+  position: absolute;
+  left: 569px;
+  width: 115px;
+  height: 97px;
+}
+
+#window-div {
+  position: absolute;
+  left: 388px;
+  top: 157px;
+  width: 212px;
+  height: 167px;
+  display: none;
+}
