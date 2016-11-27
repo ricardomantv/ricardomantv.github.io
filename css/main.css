@@ -30,6 +30,11 @@ footer {
   margin-bottom: 5px;
 }
 
+.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .rule {
   border: 0;
   height: 1px;

@@ -78,10 +78,39 @@
             </div>
           </div>
         </div>
-        <p>Scaling works in a tree-like level-based system. The island is broken down into chunks based on the various
-           points of interest.
+        <p>Scaling works in a tree-like level-based system. The island is broken down into its various points of interests, and then
+           those points are grouped into multiple different chunks. When a player scales down on the island, it will scale them down to
+           the size of the chunk closest to them. The player will then be able to select a specific point of interest from that chunk of
+           the island to scale down further to regular size and begin interacting with that scene.
         </p>
+        <p>This system for scaling was implemented because it would otherwise be difficult for players to identify where points of
+           interest are located on the island. This system allows us to guarantee that no matter where a player scales up or down, it will
+           place them at a point of interest.
+        </p>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="image">
+              <img src="img/island/large_scale.png" alt="Player view at large scale">
+              <p class="image-caption">This is what a player would see at maximum scale. They can see and walk across the entire island.</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="image">
+              <img src="img/island/med_scale.png" alt="Player view at chunk scale">
+              <p class="image-caption">This is what a player would see at an intermediary chunk scale. Three points of interest are the forest, shack, and the rock formation.</p>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="image">
+              <img src="img/island/small_scale.png" alt="Player view at regular scale">
+              <p class="image-caption">This is what a player would see at regular view, the point of interest being the hut.</p>
+            </div>
+          </div>
+        </div>
         <h2>Product</h2>
+        <p>Since this project is still currently being worked on, there is no final product to show quite yet. The project is currently in its
+           alpha build, but a demo video will be made once we make further progress.
+        </p>
       </div>
     </div>
 
