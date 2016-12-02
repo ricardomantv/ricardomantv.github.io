@@ -25,10 +25,20 @@ footer {
   font-style: italic;
 }
 
+.image-right {
+  float: right;
+  margin-left: 20px;
+}
+
 .page-header {
   text-align: center;
   border-bottom: none;
   margin-bottom: 5px;
+}
+
+.obfuscate {
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
 
 .rule {
