@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ricardo Tucker's Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Ricardo Tucker</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Work <span class="sr-only">(current)</span></a></li>
+            <li><a href="side.html">Side Projects</a></li>
+            <li><a href="about.html">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <div class="page-header">
+        <h1>Ricardo Tucker Assignment 5 Proposal</h1>
+        <hr class="rule">
+      </div>
+
+      <div class="container">
+        <div class="image-right">
+          <img src="img/cg_proposal/method_comp.png" alt="Comparison of different differential solvers">
+          <p class="image-caption">A graph comparing the stability of Forward and Backward Euler and Crank-Nicolson Scheme</p>
+        </div>
+        <p>My proposal for this assignment is to implement two more types of differential solvers: Backwards Euler and the Crank-Nicolson
+           Scheme. Backwards Euler is an implicit method, so it is slower than explicit ones like Forwards Euler and Symplectic Euler (sort of),
+           but is even more stable than the other two methods. The Crank-Nicolson Scheme is an average of the Fowards and Backwards Euler
+           methods, so I would like to see how this compares to the Sympletic Euler method which is also semi-implicit.
+        </p>
+        <p>I would initially see how these differential solvers work with just the wave equation, but if there is no noticeable difference
+           through this medium then I will compare the solvers using the Heat equation as well. The heat equation is typically modeled using
+           the Backward Euler method, so seeing how it will work with the other solvers will also prove interesting. This project will build
+           off of the Scotty3D code from Assignment 4.
+        </p>
+        <div class="image">
+          <img src="img/cg_proposal/heat_equation.gif">
+          <p class="image-caption">An animation of a 3D model "melting" due to the heat equation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+  </body>
+  <hr class="rule">
+  <footer>
+    <p>&copy; Ricardo Tucker</p>
+  </footer>
+</html>
