@@ -32,11 +32,12 @@
 
     <div class="wrapper">
       <div class="page-header">
-        <h1>Ricardo Tucker Assignment 5 Proposal</h1>
+        <h1>Ricardo Tucker Assignment 5</h1>
         <hr class="rule">
       </div>
 
       <div class="container">
+        <h3>Proposal</h3>
         <div class="image-right">
           <img src="img/cg_proposal/method_comp.png" alt="Comparison of different differential solvers">
           <p class="image-caption">A graph comparing the stability of Forward and Backward Euler and Crank-Nicolson Scheme</p>
@@ -54,6 +55,50 @@
           <img src="img/cg_proposal/heat_equation.gif">
           <p class="image-caption">An animation of a 3D model "melting" due to the heat equation.</p>
         </div>
+        <br><br>
+        <h3>Report</h3>
+        <p>
+           Overall, I had underestimated how complex this project would be, and was unable to finish all of the different aspects listed
+           in my proposal. I was able to complete most of the Backward Euler integration, using the Eigen C++ libraries to solve the linear
+           systems. Unfortunately, the Backward Euler integration is both incredibly slow (due to the Eigen library's slow speed when solving
+           linear systems) and is not stable when it runs. I originally had the integrator use the vertex offsets as the function <em>f</em>
+           that is solved each frame, but this led to the mesh simply melting back into its original shape rather than behaving like water.
+         </p>
+         <div class="image">
+           <video id="noVelocity" width="640" height="480" preload controls>
+             <source src="files/melting_be.mp4"/>
+           </video>
+           <p class="image-caption">An animation of the incorrect Backward Euler implementation, when offsets are calculated independently of velocities.</p>
+         </div>
+         <p>
+           This issue stemmed from the vertices not having any velocity, so I changed the code so that the velocities would be what was solved
+           every frame rather than the offsets, which would simply be updated based on the new velocities (offset = offset + timestep * new_velocity).
+           While this made the integrator act somewhat more like water, it was incredibly unstable and would break after a few seconds. I'm not
+           sure if this was a bug with how I constructed the Laplacian matrix (if i = j then 1, or if i &amp; j are neighbors then cotan weight
+           between i &amp; j, else 0) or the fact that I set the initial velocities to v->laplacian() rather than all 0s since otherwise the
+           updated velocity vector would always solve to the zero vector.
+         </p>
+         <p>
+            As for the Crank-Nicholson scheme, since it depended on the Backward Euler integrator working correctly, I was not able to finish this
+            either by extension. I have code written for it that theoretically would work assuming I had a working implementation of Backward Euler,
+            since Crank-Nicholson is simply an average of Forward and Backward Euler. My implementation would simply call the Forward integrator,
+            save the offset and velocity for each vertex, then call the Backward integrator, and average the updated offsets and velocities from
+            the Backwards integrator with the saved values from calling the Forward integrator.
+          </p>
+          <p>
+            Since I spent so long trying to fix the Backward Euler integrator, I was not able to get to implementing the heat equation simulator at
+            all. I had underestimated how long the Backward integrator would take to implement, since I had not had much trouble implementing the
+            Forward and Symplectic integrators from Assignment 4, so this assignment has definitely given me a new appreciation for the different algorithms
+            solving for solving ODEs and PDEs.
+          </p>
+
+          <h3>Controls</h3>
+          <p>This project was an extension of Assignment 4, so this is run through Scotty3D. To reach the two new integrators, go into Animate mode (A) then Wave mode (W) and use:</p>
+          <ul>
+            <li><strong>B:</strong> Backward Euler </li>
+            <li><strong>Q:</strong> Crank-Nicholson Scheme</li>
+          </ul>
+          <p>Technically you can reach the heat equation mode with (H) from Animate mode, but since this was never implemented it will not do anything.</p>
       </div>
     </div>
 
