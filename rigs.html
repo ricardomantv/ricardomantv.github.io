@@ -65,72 +65,88 @@
         <p>The arms and legs of the characters have both FK (Forward Kinematic) controls that allow animators to influence parts of the
            arm/leg separately and IK (Inverse Kinematic) controls that control the entire arm/leg with one control. The characters also
            have a meta control located near each arm/leg that allows the user to switch between using their respective FK/IK control.
-         </p>
-         <div class="image">
-           <img src="img/rigs/fk_arm.png" alt="FK arm control">
-           <p class="image-caption">FK arm controls. There is one control for each joint of the arm.</p>
-         </div>
-         <div class="image">
-           <img src="img/rigs/ik_arm.png" alt="IK arm control">
-           <p class="image-caption">IK arm control. There is one control at the wrist that influences the entire arm.</p>
-         </div>
-         <div class="image">
-           <img src="img/rigs/ik_legs.png" alt="IK leg control">
-           <p class="image-caption">IK controls for the legs.</p>
-         </div>
-         <p>The Ray character's mesh is bound to the joint skeleton system through the Heat Map skinning algorithm. While this does a
-            good job of binding the mesh and joints together, it is not perfect and some joint-skin influences still need to be edited,
-            which is done through skin weight painting. I used this technique to paint how much influence specific joints have over
-            vertices of the 3D model when moved, with black representing no influence and white representing a maximum influence. For
-            example, the shoulder joint of a model will have complete influence over the skin directly next to the joint, but have a slowly
-            decreasing amount of influence over vertices that are farther away from the shoulder. This technique is applied to almost
-            every single joint in the skeleton so that the rig can be animated with the most realistic-looking movement possible.
-          </p>
-          <div class="image">
-            <img src="img/rigs/weights.png" alt="Mesh skin weights">
-            <p class="image-caption">Influences for the shoulder joint on the mesh.</p>
-          </div>
-          <p>Ray also uses a Delta Mush deformer and Corrective Blendshapes to further tweak his mesh for poses that painting skin weights
-             alone cannot fix. The Delta Mush deformer automatically reshapes the mesh when it is moved by a joint to make it more like
-             its default rest state (the T-pose from the first pictures). The intensity of this deformer is painted onto the mesh in a way
-             similar to the skin weights in the last picture.
-          </p>
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="image">
-                <img src="img/rigs/no_dm.png" alt="No delta mush">
-                <p class="image-caption">The shoulder joint with no delta mush applied.</p>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="image">
-                <img src="img/rigs/dm.png" alt="Delta mush">
-                <p class="image-caption">The shoulder joint with the delta mush applied.</p>
-              </div>
+        </p>
+        <div class="image">
+         <img src="img/rigs/fk_arm.png" alt="FK arm control">
+         <p class="image-caption">FK arm controls. There is one control for each joint of the arm.</p>
+        </div>
+        <div class="image">
+         <img src="img/rigs/ik_arm.png" alt="IK arm control">
+         <p class="image-caption">IK arm control. There is one control at the wrist that influences the entire arm.</p>
+        </div>
+        <div class="image">
+         <img src="img/rigs/ik_legs.png" alt="IK leg control">
+         <p class="image-caption">IK controls for the legs.</p>
+        </div>
+        <p>The Ray character's mesh is bound to the joint skeleton system through the Heat Map skinning algorithm. While this does a
+          good job of binding the mesh and joints together, it is not perfect and some joint-skin influences still need to be edited,
+          which is done through skin weight painting. I used this technique to paint how much influence specific joints have over
+          vertices of the 3D model when moved, with black representing no influence and white representing a maximum influence. For
+          example, the shoulder joint of a model will have complete influence over the skin directly next to the joint, but have a slowly
+          decreasing amount of influence over vertices that are farther away from the shoulder. This technique is applied to almost
+          every single joint in the skeleton so that the rig can be animated with the most realistic-looking movement possible.
+        </p>
+        <div class="image">
+          <img src="img/rigs/weights.png" alt="Mesh skin weights">
+          <p class="image-caption">Influences for the shoulder joint on the mesh.</p>
+        </div>
+        <p>Ray also uses a Delta Mush deformer and Corrective Blendshapes to further tweak his mesh for poses that painting skin weights
+           alone cannot fix. The Delta Mush deformer automatically reshapes the mesh when it is moved by a joint to make it more like
+           its default rest state (the T-pose from the first pictures). The intensity of this deformer is painted onto the mesh in a way
+           similar to the skin weights in the last picture.
+        </p>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/rigs/no_dm.png" alt="No delta mush">
+              <p class="image-caption">The shoulder joint with no delta mush applied.</p>
             </div>
           </div>
-          <p>Corrective Blendshapes will reshape parts of a mesh when joints reach certain translation or rotation values to look more like
-             a separate reference mesh. For example, to have Ray's mouth not look rectangular when opened, I created a copy of his head and
-             sculpted the lips inward to make it more circular. Since these changes would look awkward when Ray's mouth was closed, the mouth
-             control is set to begin mimicking the edited reference when the mouth is opened by a certain amount.
-          </p>
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="image">
-                <img src="img/rigs/no_blendshape.png" alt="No blendshape">
-                <p class="image-caption">The default open mouth look, with no corrective blendshape applied.</p>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="image">
-                <img src="img/rigs/blendshape.png" alt="Blendshape">
-                <p class="image-caption">A corrective blendshape is applied to the mouth for a more natural look when it is opened.</p>
-              </div>
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/rigs/dm.png" alt="Delta mush">
+              <p class="image-caption">The shoulder joint with the delta mush applied.</p>
             </div>
           </div>
+        </div>
+        <p>Corrective Blendshapes will reshape parts of a mesh when joints reach certain translation or rotation values to look more like
+           a separate reference mesh. For example, to have Ray's mouth not look rectangular when opened, I created a copy of his head and
+           sculpted the lips inward to make it more circular. Since these changes would look awkward when Ray's mouth was closed, the mouth
+           control is set to begin mimicking the edited reference when the mouth is opened by a certain amount.
+        </p>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/rigs/no_blendshape.png" alt="No blendshape">
+              <p class="image-caption">The default open mouth look, with no corrective blendshape applied.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/rigs/blendshape.png" alt="Blendshape">
+              <p class="image-caption">A corrective blendshape is applied to the mouth for a more natural look when it is opened.</p>
+            </div>
+          </div>
+        </div>
+        <p>Ray also has a facial rig to allow the animator to control Ray's mouth, cheeks, and eyebrows to create expressions.
+        </p>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/rigs/puffed_cheeks.png" alt="Puffed cheeks">
+              <p class="image-caption">Ray's cheeks puffed out.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/rigs/smile.png" alt="Ray smiling">
+              <p class="image-caption">The mouth corner controls moved upwards to make Ray smile.</p>
+            </div>
+          </div>
+        </div>
         <h2>Product</h2>
         <p>The first character is complete, and the Autodesk Maya file can be found <a href="files/char_FINAL.ma">here</a>.</p>
-        <p>The Ray character is still in progress, but the latest version of the rig can be downloaded <a href="files/ray_face2.ma">here</a>.</p>
+        <p>The Ray character is still in progress, but the latest version of the rig can be downloaded <a href="files/ray_FINAL.ma">here</a>.</p>
         <p><em>Note: These files both require Autodesk Maya to open.</em></p>
       </div>
     </div>
@@ -143,6 +159,6 @@
   </body>
   <hr class="rule">
   <footer>
-    <p>&copy; Ricardo Tucker</p>
+    <p>&copy; Ricardo Tucker 2016</p>
   </footer>
 </html>
