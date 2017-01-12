@@ -4,13 +4,17 @@
 
 /* Classes */
 .caption h3 {
-  width: 350px;
+  width: 100%;
 }
 
 .caption p {
-  width: 350px;
+  width: 100%;
 }
 
 .grid {
   margin: 0 auto;
+}
+
+.grid-item {
+  max-width: 400px;
 }
