@@ -15,21 +15,35 @@
   height: 100px;
 }
 
-#grid {
-  margin: 0 auto;
-}
-
 .grid-item {
   width: 300px;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
 }
 
-.masonry {
+.masonry, .masonry .masonry-brick {
   transition-timing-function: ease-in-out;
-  -webkit-transition-duration: .75s;
-  -moz-transition-duration: .75s;
-  -ms-transition-duration: .75s;
-  -o-transition-duration: .75s;
-  transition-duration: .75s
+  -webkit-transition-duration: .7s;
+     -moz-transition-duration: .7s;
+      -ms-transition-duration: .7s;
+       -o-transition-duration: .7s;
+          transition-duration: .7s;
+}
+
+.masonry {
+
+  -webkit-transition-property: width, height;
+     -moz-transition-property: width, height;
+      -ms-transition-property: width, height;
+       -o-transition-property: width, height;
+          transition-property: width, height;
+}
+
+.masonry .masonry-brick {
+
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
 }

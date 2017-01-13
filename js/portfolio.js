@@ -4,24 +4,10 @@ function loadMasonry() {
     $grid.masonry({
       fitWidth: true,
       gutter: 20,
-      stagger: 30,
+      stagger: 50,
       itemSelector: '.grid-item',
+      transitionDuration: '0.750s',
+      resize: true,
     });
   });
-
-  /*
-  var $grid = $('.grid').masonry({
-    fitWidth: true,
-    gutter: 20,
-    stagger: 30,
-    itemSelector: '.grid-item',
-
-    isAnimated: true,
-    animationOptions: {
-      duration: 750,
-      easing: 'linear',
-      queue: false
-    }
-  });
-  */
 }
