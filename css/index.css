@@ -1,0 +1,11 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url('../img/index/ricardo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%
+}
