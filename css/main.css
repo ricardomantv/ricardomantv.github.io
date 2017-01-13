@@ -59,5 +59,6 @@ img {
 }
 
 .wrapper {
-  margin-left: 10px;
+  max-width: 1260px;
+  margin: 0 auto;
 }
