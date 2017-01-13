@@ -21,6 +21,7 @@
   -webkit-touch-callout: none;
 }
 
+
 .masonry, .masonry .masonry-brick {
   transition-timing-function: ease-in-out;
   -webkit-transition-duration: .7s;
