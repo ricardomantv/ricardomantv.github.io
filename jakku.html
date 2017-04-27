@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ricardo Tucker | Escape from Jakku</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Ricardo Tucker</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="portfolio.html">Portfolio <span class="sr-only">(current)</span></a></li>
+            <!-- <li><a href="side.html">Side Projects</a></li> -->
+            <li><a href="about.html">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+      <div class="page-header">
+        <h1>SigEp Wars: Escape from Jakku</h1>
+        <hr class="rule">
+      </div>
+
+      <div class="container-fluid">
+        <div class="image" id="top-vid">
+          <div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/pqyFGtDfY8I" frameborder="0" allowfullscreen></iframe></div>
+          <p class="image-caption">A gameplay video of SigEp Wars: Escape from Jakku</p>
+        </div>
+
+        <h2>Overview</h2>
+        <p><strong><em>Collaborators:</em></strong> David Murray</p>
+        <p><strong><em>Role:</em></strong> Game Programmer</p>
+        <p><strong><em>Awards:</em></strong> 1st Place, Fraternity Division, Carnegie Mellon Spring Carnival 2017</p>
+        <p>SigEp Wars: Escape from Jakku was a virtual reality experience designed as part of Sigma Phi Epsilon fraternity's booth for the annual CMU Spring Carnival in 2017.
+           SigEp's booth theme was based on <em>Star Wars: The Force Awakens</em>, and the game was modeled after <a href="https://www.youtube.com/watch?v=8sarFZJl3h0">this scene</a>
+           where the protagonists of the movie fly in the Millennium Falcon through a Ship Graveyard to flee from enemy Tie Fighters.
+        </p>
+        <p><em>Disclaimer:</em> This project is in no way an official Star Wars video game, nor will it be sold or distributed to the general public for legal reasons. By
+           including it in Sigma Phi Epsilon's booth, I am not claiming it to be a Sigma Phi Epsilon or Carnegie Mellon University product. All designs for models and clips
+           from <em>Star Wars: The Force Awakens</em> belong to The Walt Disney Company and Lucasfilm Ltd.
+        </p>
+
+        <h2>Intent</h2>
+        <p>The main goal for the game, which was also the same mentality for our choice of Star Wars theme for booth, was to evoke people's nostalgia and childhood wonder of being
+           immersed in the Star Wars universe. Seeing how the Millennium Falcon is the most iconic starship from the Star Wars series, and the exact scene the game was based on was
+           was featured in the trailer for <em>The Force Awakens</em>, I wanted to have a game that allowed people to finally live out their dreams of flying the ship that made the
+           Kessel Run in less than 12 parsecs.
+        </p>
+        <p>While Escape from Jakku is technically considered a game, there is no explicit objective other than to shoot down TIE Fighters that follow you as you fly. Since the game
+           would be played by children and people with limited experience in virtual reality, there is no "death" or "lose" scenario and all players will successfully reach the end
+           sequence regardless of how many TIE Fighters they actually destroy.
+        </p>
+
+        <h2>Process</h2>
+        <p>The game was created in the Unity3D engine and the built-in OpenVR packages, and was run on the HTC Vive mounted to a plane steering mechanism. The models were all downloaded
+           online on various websites such as Turbosquid and TF3DM, and the environment was created using the built-in Unity terrain editor tools. The player object, or the vive camera
+           object, was positioned in the Millennium Falcon turret seat model. The turret seat moved around the environment on a rail system, consisting of 14 different empty GameObjects that
+           represented target points for the turret seat to reach across the map. An overall game manager script kept track of which waypoints the player had visited to play sound clips from the
+           movie at specific points and trigger the end sequence once the player had reached the end of the track.
+        </p>
+        <p>(insert screenshot of waypoint rail track)</p>
+        <p>To shoot at the TIE Fighters that are chasing them, players aim and fire the Millennium Falcon's turret guns using the Vive controllers mounted in front of the physical turret chair
+           that the players sit in for the duration of the game. The controls are the same as airplane handle controls, where tilting the controllers towards yourself aims the crosshair up and
+           pushing them down and away from yourself moves the crosshair down (and aiming left and right is intuitive), and the trigger buttons on the back of each controller fires that respective
+           cannon.
+        </p>
+        <p>(insert screenshot of player view in-game)</p>
+        <p>The AI for the two TIE Fighters was relatively simple. They chase the player by following two empty GameObjects floating several units away from the player, so that even if the Fighters
+           reach their targets they will still be within a shootable range by the player. The speed of the Fighters increases with the distance they are from the player, so that they can catch up
+           quickly from their respawn points and keep up the sense of urgency to the game. The TIE Fighters also periodically shoot lasers at the player, which will cause a damage sound effect to
+           play if the player is hit.
+        </p>
+        <p>(insert a screenshot of the TIE Fighters)</p>
+
+        <h2>Product</h2>
+        <p>Escape from Jakku was featured in Sigma Phi Epsilon's booth for the entirety of Carnival 2017, which ran from Thursday, April 20th through Sunday, April 23rd. Fellow fraternity brother
+           David Murray constructed the chair and handle mounts for the Vive controllers. As people walked through the booth, they could step into the Turret Room and play the game, while others
+           going through the booth could watch the gameplay on a monitor a few feet down the hallway.
+        </p>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/jakku/chair2.jpg" alt="The cockpit seat of the game" width="400">
+              <p class="image-caption">The seat and turret handles that players used to play the game</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/jakku/courtyard.jpg" alt="The courtyard with game monitor" width="400">
+              <p class="image-caption">The view of the game monitor from the courtyard room</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+  </body>
+  <hr class="rule">
+  <footer>
+    <p>&copy; Ricardo Tucker 2016</p>
+  </footer>
+</html>
