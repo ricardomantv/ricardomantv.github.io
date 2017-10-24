@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ricardo Tucker | About Me</title>
+    <title>Ricardo Tucker | Slowdanger</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -23,9 +22,9 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li class="active"><a href="portfolio.html">Portfolio <span class="sr-only">(current)</span></a></li>
             <!-- <li><a href="side.html">Side Projects</a></li> -->
-            <li class="active"><a href="about.html">About Me <span class="sr-only">(current)</span></a></li>
+            <li><a href="about.html">About Me</a></li>
           </ul>
         </div>
       </div>
@@ -33,26 +32,21 @@
 
     <div class="wrapper">
       <div class="page-header">
-        <h1>About Ricardo Tucker</h1>
+        <h1>Slowdanger - Body, My Body Music Video</h1>
         <hr class="rule">
       </div>
+
       <div class="container-fluid">
-        <div class="image-right">
-          <img src="img/about/ricardo.jpg" alt="Picture of me!">
+        <div class="image" id="top-vid">
+          <div class="vid-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/JjD5OiluzgU" frameborder="0" allowfullscreen></iframe></div>
+          <p class="image-caption">The music video for Slowdanger's Body, My Body</p>
         </div>
-        <h3>Bio</h3>
-        <p>I am a student at Carnegie Mellon, currently finishing my last semester of my undergraduate Computer Science degree with a minor in
-           Animation &amp; Special Effects. Following my passion for game design and virtual and augmented reality development, I am about to
-           pursue a Masters of Entertainment Technology through Carnegie Mellon's Entertainment Technology Center (ETC).
-        </p>
-        <p>Outside of schoolwork, I am a proud brother of the Sigma Phi Epsilon fraternity, have served as both an Orientation Counselor, Orientation Leader,
-           and now one of seven Head Orientaiton Counselors on Carnegie Mellon's Orientation program staff, and have served as a site leader for CMU's 1000plus
-           Day of Service event for about a year.
-        </p>
-        <h3>Contact</h3>
-        <p>Serious inquiries only, please.</p>
-        <p><strong>Email:</strong> <span class="obfuscate">ude.umc.werdna@rekcutfr</span></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ricardotucker">Ricardo Tucker</a>
+
+        <h2>Overview</h2>
+        <p><strong><em>Collaborators:</em></strong> Anna Henson, Catherine Luo, Jessica Mendenbach</p>
+        <p><strong><em>Role:</em></strong> Lead Software Engineer</p>
+        <p>Body, My Body is a music video that I and 3 other teammates produced for the independent performance artist group, <a href="http://www.slowdangerslowdanger.com/">Slowdanger</a>.
+        <h2>Intent</h2>
       </div>
     </div>
 
@@ -60,6 +54,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
   </body>
   <hr class="rule">
   <footer>
