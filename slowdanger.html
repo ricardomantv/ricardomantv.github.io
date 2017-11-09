@@ -45,7 +45,7 @@
         <h2>Overview</h2>
         <p><strong><em>Collaborators:</em></strong> Anna Henson, Catherine Luo, Jessica Mendenbach</p>
         <p><strong><em>Role:</em></strong> Lead Software Engineer</p>
-        <p><strong><em>Tools/Languages:</em></strong> OpenFrameworks 0.9, C++</p>
+        <p><strong><em>Tools/Languages:</em></strong> OpenFrameworks 0.9.8, C++</p>
         <h2>Intent</h2>
         <p>Body, My Body is a music video that I and 3 other teammates produced for the independent performance artist group, <a href="http://www.slowdangerslowdanger.com/">Slowdanger</a>.</p>
         <p>The overall message behind the song is that bodies are always deteriorating, so we wanted to use the technology in this project to emphasize that fragility. The video features
@@ -54,8 +54,34 @@
         </p>
         <h2>Process</h2>
         <p>I specifically worked on animating the point cloud data of Slowdanger's dance performances, recorded in Carnegie Mellon University's Panoptic Studio dome. Each of the dances lasted
-           about 4 minutes each, and the video data came back processed into Polygon File Format (.ply) files representing each frame of video.
+           about 4 minutes each, and the video data came back processed into Polygon File Format (.ply) files representing each frame of video. Because each frame of point cloud data came in as
+           a separate file, the next step became a matter of determining a pipeline to render and play back these frames.
         </p>
+        <div class="image">
+          <video width="640" height="480" controls>
+            <source src="files/slowdanger_panoptic.mp4" type="video/mp4">
+          </video>
+          <p class="image-caption">Slowdanger performing inside of the Panoptic Studio dome</p>
+        </div>
+        <p>At first I attempted to construct meshes from the point clouds using the Poisson Surface Reconstruction algorithm in Meshlab, an open source 3D mesh processing software. From here, I
+           exported the mesh as a 3D .obj file. I wrote a Python script to automate this process of reconstructing and exporting point cloud frames into meshes. The idea was to import each of these
+           .obj files into the Unity3D engine using Mega Cache, a Unity plugin that creates animations by preloading and swapping 3d meshes per frame. However, the issue with this pipeline was that
+           Unity could not import the texture data for the meshes correctly, since Meshlab exports textures as .mtl files rather than image files. We could not find a way to automate generating image
+           files of the mesh textures from Meshlab, and we didn't like the look of the texture-less meshes for the project.
+        </p>
+        <p>Next, I moved onto rendering the point clouds using the openFrameworks C++ toolkit. The application that I wrote loads in a variable number of .ply files and loops through the meshes and
+           renders them each once per frame. The application also included a keyframed timeline to introduce camera movement during the point cloud rendering. The point clouds are rendered against
+           a green background, serving as a "green screen" to overlay the animations over a black background in the final video.
+        </p>
+        <div class="image">
+          <video width="480" height="320" controls>
+            <source src="files/slowdanger_ofTest.mp4" type="video/mp4">
+          </video>
+          <p class="image-caption">Test screengrab of the openFrameworks app rendering point cloud data</p>
+        </div>
+        <h2>Product</h2>
+        The final video (at the top of the page) is featured on the Misc Records YouTube channel and on Slowdanger's Facebook page. The music video was also used as a promotion for Slowdanger's
+        exhibit at the Carnegie Museum of Art, for their <a href="https://www.facebook.com/events/148156189127676/permalink/150116815598280/">Third Thursdays</a> feature.
       </div>
     </div>
 
