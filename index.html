@@ -1,31 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ricardo Tucker's Portfolio</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <title>Ricardo Tucker</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/portfolio.css" rel="stylesheet" type="text/css">
+
   </head>
-  <body>
-    <div id="wrapper">
-      <div>
-        <p id="main-title">Ricardo Tucker</p>
-        <p id="main-caption">I am a current student at Carnegie Mellon University, finishing my last semester of my Computer Science degree with a minor
-                             in Animation &amp; Special Effects and currently pursuing an accelerated Masters of Entertainment Technology. I specialize in
-                             technical art in a virtual reality context.
-        </p>
-        <div id="links">
-          <a href="portfolio.html">Portfolio</a>
-          <a href="about.html">About Me</a>
+
+  <body onload="loadMasonry();">
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+          <i class="fa fa-times"></i>
+        </a>
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#top">Ricardo Tucker</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#experience">Experience</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a href="files/Ricardo-Tucker-TA-Resume.pdf" target="_blank">Resume</a>
+        </li>
+        <li>
+          <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="horiz-nav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#top">Ricardo Tucker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="files/Ricardo-Tucker-TA-Resume.pdf" target="_blank">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Header -->
+    <header class="header" id="top">
+      <div class="text-vertical-center">
+        <h1>Ricardo Tucker</h1>
+        <h3>Technical Artist | Software Engineer</h3>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container text-center">
+        <h2>About Me</h2>
+        <p class="lead">Hello! I am a first year master's candidate pursuing the accelerated degree from the Entertainment Technology Center.
+          I will be graduating from Carnegie Mellon in Spring 2018 with a degree in Computer Science and a minor in Animation and Special Effects.
+          I have worked in game programming and VR development for about 2 years now, and ultimately would like to enter the creative industry as a technical artist or a software engineer.
+        </p>
+        <p class="lead"> Outside of professional work and academia, I am also very involved on Carnegie Mellon's campus life. I have worked as a part of CMU's undergraduate orientation staff for 3 years, serving as one of the seven 2017 Head Orientation Counselors in charge of hiring and training the 150+ student staff members and organizing the first-year events for the week before classes start. I am also a proud brother of the Sigma Phi Epsilon social fraternity, in which I have held several leadership and mentor-based roles.
+        </p>
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <section id="experience" class="services bg-dark text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-10 mx-auto">
+            <h2>Experience</h2>
+            <hr class="small">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-light"></i>
+                    <i class="fa fa-facebook fa-stack-1x text-dark"></i>
+                  </span>
+                  <h4>
+                    <strong>Facebook</strong>
+                  </h4>
+                  <p>Software Engineering Intern - Social VR</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="service-item">
+                  <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-shield fa-stack-1x text-dark"></i>
+                  </span>
+                  <h4>
+                    <strong>Ntrepid Corporation</strong>
+                  </h4>
+                  <p>Software Development Intern - Passages Team</p>
+                </div>
+              </div>
+            </div>
+            <!-- /.row (nested) -->
+          </div>
+          <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <!--
+    <aside class="callout">
+      <div class="text-vertical-center">
+        <h1>Vertically Centered Text</h1>
+      </div>
+    </aside>
+    -->
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="col-lg-10 mx-auto text-center">
+          <h2>Portfolio</h2>
+          <hr class="small">
+        </div>
+        <div id="filter-buttons" class="btn-group" role="group">
+          <h4 style="margin-right: 5px;">Filter by:</h4>
+          <button class="btn btn-primary" data-filter="*">All</button>
+          <button class="btn btn-secondary" data-filter=".programming">Programming</button>
+          <button class="btn btn-secondary" data-filter=".art">Art</button>
+          <button class="btn btn-secondary" data-filter=".video">Video</button>
+          <button class="btn btn-secondary" data-filter=".installation">Physical Installations</button>
+        </div>
+
+        <div id="grid" class="masonry">
+          <!-- Start SigEp Wars -->
+          <div class="grid-item programming installation">
+            <div class="img-thumbnail">
+              <a href="jakku.html"><img src="img/portfolio/jakku.png" alt="Escape from Jakku"></a>
+              <div class="caption">
+                <h4>SigEp Wars: Escape from Jakku</h4>
+                <p>A Vive VR experience based on the Jakku dogfight scene from Star Wars: The Force Awakens. Built as part of Sigma Phi Epsilon's booth for CMU Spring Carnival 2017.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End SigEp Wars -->
+
+          <!-- Start Body, My Body -->
+          <div class="grid-item programming video">
+            <div class="img-thumbnail">
+              <a href="slowdanger.html"><img src="img/portfolio/slowdanger.png" alt="Body, My body"></a>
+              <div class="caption">
+                <h4>Body, My Body</h4>
+                <p>A music video created for the Slowdanger song <em>Body, My Body</em>, created using motion capture and point cloud data recorded using Carnegie Mellon's Motion Capture Lab and Panoptic Studio.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Body, My Body -->
+
+          <!-- Start Island Exploration -->
+          <div class="grid-item programming">
+            <div class="img-thumbnail">
+              <a href="island.html"><img src="img/portfolio/island.png" alt="Island Exploration"></a>
+              <div class="caption">
+                <h4>Island Exploration</h4>
+                <p>An HTC Vive research project to develop a new way for users to explore a virtual space larger than their physical space.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Island Exploration -->
+
+          <!-- Start Lawn Darts -->
+          <div class="grid-item programming">
+            <div class="img-thumbnail">
+              <a href="darts.html"><img src="img/portfolio/darts.png" alt="Lawn Darts VR"></a>
+              <div class="caption">
+                <h4>Lawn Darts VR</h4>
+                <p>A simple Oculus Rift (DK2) game where players make their last stand against mobs of angry parents trying to ban the game of lawn darts.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Lawn Darts -->
+
+          <!-- Start Don't Need Wings -->
+          <div class="grid-item art">
+            <div class="img-thumbnail">
+              <a href="kiwi.html"><img src="img/portfolio/kiwi.png" alt="Don't Need Wings to be Fly"></a>
+              <div class="caption">
+                <h4>Don't Need Wings to be <em>Fly</em></h4>
+                <p>A 3D animation of two kiwis duking it out with motion captured dance moves.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Don't Need Wings -->
+
+          <!-- Start Legends of the Hidden Temple -->
+          <div class="grid-item programming installation">
+            <div class="img-thumbnail">
+              <a href="lotht.html"><img src="img/portfolio/lotht.png" alt="Legends of the Hidden Temple"></a>
+              <div class="caption">
+                <h4>Legends of the Hidden Temple</h4>
+                <p>A game show experience based on the television show, Legends of the Hidden Temple. Built as part of Sigma Phi Epsilon's booth for the CMU Spring 2016 Carnival.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Legends of the Hidden Temple -->
+
+          <!-- Start Character Rigs -->
+          <div class="grid-item art">
+            <div class="img-thumbnail">
+              <a href="rigs.html"><img src="img/portfolio/rig.png" alt="Character Rigs"></a>
+              <div class="caption">
+                <h4>Character Rigs</h4>
+                <p>Two separate character rigs made as part of the Character Rigging for Production course at Carnegie Mellon, both with complete FK and IK controls.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Character Rigs -->
+
+          <!-- Start Tempest -->
+          <div class="grid-item art video">
+            <div class="img-thumbnail">
+              <a href="tempest.html"><img src="img/portfolio/tempest.png" alt="Tempest"></a>
+              <div class="caption">
+                <h4>Tempest</h4>
+                <p>A stop motion project about a girl who tames the oceans with mysterious abilities.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Tempest -->
+
+          <!-- Start Attic -->
+          <div class="grid-item programming">
+            <div class="img-thumbnail">
+              <a href="attic.html"><img src="img/portfolio/attic.png" alt="The Attic"></a>
+              <div class="caption">
+                <h4>The Attic</h4>
+                <p>A digital playground of two children's attic, where players can interact with objects throughout the scene and try to uncover the mystery of the children that lived there.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Attic -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <aside class="call-to-action bg-dark text-white">
+      <div class="container text-center">
+        <h3>Resume:</h3>
+        <a href="files/Ricardo-Tucker-TA-Resume.pdf" target="_blank" class="btn btn-lg btn-dark">Download Resume</a>
+      </div>
+    </aside>
+
+    <!-- Map -->
+    <!--
+    <section id="contact" class="map">
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+      <br/>
+      <small>
+        <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+      </small>
+    </section>
+    -->
+
+    <!-- Footer -->
+    <footer>
+      <div id="contact" class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto text-center">
+            <h4>
+              <strong>Contact Me</strong>
+            </h4>
+            <p>1057 Morewood Avenue
+              <br>Pittsburgh, PA 15213</p>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fa fa-phone fa-fw"></i>
+                (571) 439-0085</li>
+              <li>
+                <i class="fa fa-envelope-o fa-fw"></i>
+                <a href="mailto:rftucker@andrew.cmu.edu">rftucker@andrew.cmu.edu</a>
+              </li>
+            </ul>
+            <br>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/ricardotucker/">
+                  <i class="fa fa-linkedin fa-fw fa-3x text-dark"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/ricardomantv">
+                  <i class="fa fa-github fa-fw fa-3x text-dark"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="twitter.com/Studio_RTV">
+                  <i class="fa fa-twitter fa-fw fa-3x text-dark"></i>
+                </a>
+              </li>
+            </ul>
+            <hr class="small">
+            <p class="text-muted">Copyright &copy; Ricardo Tucker 2017</p>
+          </div>
+        </div>
+      </div>
+      <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
+        <i class="fa fa-chevron-up fa-fw fa-1x"></i>
+      </a>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Portfolio JavaScript -->
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.js"></script>
+    <script src="js/portfolio.js"></script>
+
   </body>
+
 </html>

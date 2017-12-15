@@ -1,8 +1,16 @@
 /* Generic elements */
 
 /* IDs */
+#filter-buttons {
+  margin: 0 0 20px 0;
+}
+
 #grid {
   margin: 0 auto;
+}
+
+#horiz-nav {
+  display: none;
 }
 
 /* Classes */

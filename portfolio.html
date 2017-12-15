@@ -39,9 +39,19 @@
       </div>
 
       <div class="container-fluid">
+
+        <div id="filter-buttons" class="btn-group" role="group">
+          <h4>Filter by:</h4>
+          <button class="btn btn-primary" data-filter="*">Show All</button>
+          <button class="btn btn-secondary" data-filter=".programming">Programming</button>
+          <button class="btn btn-secondary" data-filter=".art">Art</button>
+          <button class="btn btn-secondary" data-filter=".video">Video</button>
+          <button class="btn btn-secondary" data-filter=".installation">Physical Installations</button>
+        </div>
+
         <div id="grid" class="masonry">
           <!-- Start SigEp Wars -->
-          <div class="grid-item">
+          <div class="grid-item programming installation">
             <div class="thumbnail">
               <a href="jakku.html"><img src="img/portfolio/jakku.png" alt="Escape from Jakku"></a>
               <div class="caption">
@@ -53,7 +63,7 @@
           <!-- End SigEp Wars -->
 
           <!-- Start Body, My Body -->
-          <div class="grid-item">
+          <div class="grid-item programming">
             <div class="thumbnail">
               <a href="slowdanger.html"><img src="img/portfolio/slowdanger.png" alt="Body, My body"></a>
               <div class="caption">
@@ -65,7 +75,7 @@
           <!-- End Body, My Body -->
 
           <!-- Start Island Exploration -->
-          <div class="grid-item">
+          <div class="grid-item programming">
             <div class="thumbnail">
               <a href="island.html"><img src="img/portfolio/island.png" alt="Island Exploration"></a>
               <div class="caption">
@@ -77,7 +87,7 @@
           <!-- End Island Exploration -->
 
           <!-- Start Lawn Darts -->
-          <div class="grid-item">
+          <div class="grid-item programming">
             <div class="thumbnail">
               <a href="darts.html"><img src="img/portfolio/darts.png" alt="Lawn Darts VR"></a>
               <div class="caption">
@@ -88,7 +98,8 @@
           </div>
           <!-- End Lawn Darts -->
 
-          <div class="grid-item">
+          <!-- Start Don't Need Wings -->
+          <div class="grid-item art">
             <div class="thumbnail">
               <a href="kiwi.html"><img src="img/portfolio/kiwi.png" alt="Don't Need Wings to be Fly"></a>
               <div class="caption">
@@ -97,9 +108,10 @@
               </div>
             </div>
           </div>
+          <!-- End Don't Need Wings -->
 
           <!-- Start Legends of the Hidden Temple -->
-          <div class="grid-item">
+          <div class="grid-item programming installation">
             <div class="thumbnail">
               <a href="lotht.html"><img src="img/portfolio/lotht.png" alt="Legends of the Hidden Temple"></a>
               <div class="caption">
@@ -111,7 +123,7 @@
           <!-- End Legends of the Hidden Temple -->
 
           <!-- Start Character Rigs -->
-          <div class="grid-item">
+          <div class="grid-item art">
             <div class="thumbnail">
               <a href="rigs.html"><img src="img/portfolio/rig.png" alt="Character Rigs"></a>
               <div class="caption">
@@ -123,7 +135,7 @@
           <!-- End Character Rigs -->
 
           <!-- Start Tempest -->
-          <div class="grid-item">
+          <div class="grid-item art video">
             <div class="thumbnail">
               <a href="tempest.html"><img src="img/portfolio/tempest.png" alt="Tempest"></a>
               <div class="caption">
@@ -135,7 +147,7 @@
           <!-- End Tempest -->
 
           <!-- Start Attic -->
-          <div class="grid-item">
+          <div class="grid-item programming">
             <div class="thumbnail">
               <a href="attic.html"><img src="img/portfolio/attic.png" alt="The Attic"></a>
               <div class="caption">
@@ -153,8 +165,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/portfolio.js"></script>
   </body>
   <hr class="rule">
