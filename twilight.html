@@ -79,7 +79,37 @@
         </p>
 
         <h2>Process</h2>
-        <p><em>Writeup coming soon!</em></p>
+        <p>The game follows the same general pattern of Time Crisis where players travel through the level and stop at specific areas where enemies begin to appear. The players
+           must clear the area of all enemies before they are brought to the next area. To achieve this level scrolling effect, I set waypoints throughout the level that would
+           denote the position and rotation of the camera for areas where enemies would appear, and wrote a rails script that calculated a bezier curve between the points for
+           the camera to travel along.
+        </p>
+
+        <div class="image">
+          <img src="img/twilight/waypoints.png" alt="Camera path waypoints" width="500">
+          <p class="image-caption">A path of waypoints (white spheres) to form the camera's bezier curve</p>
+        </div>
+
+        <p>All of the enemies featured in the game are the direct models from <em>Legend of Zelda: Twilight Princess</em>. While most of the character models came pre-textured, the
+        the models did not come rigged or animated. For the non-humanoid characters, I manually rigged and animated the characters myself. Due to time constraints, I only used
+        linear skin binding with minor skin weight painting.
+        </p>
+
+        <div class="image">
+          <img src="img/twilight/spider_walk.gif" alt="Animated spider walk" width="500">
+          <p class="image-caption">The final spider animation. Each leg is an individual IK rig.</p>
+        </div>
+
+        <p>For the humanoid meshes, I used Adobe Mixamo process for automatic rigging and animating. Specifically for Ganondorf, I downloaded an FBX of his Mixamo-generated rig, as well
+        as the skeleton data for several different animations to be featured through his battle (walking, spell casting, dying, etc) and connected through an Animation Controller.
+        </p>
+
+        <div class="image">
+          <img src="img/twilight/ganondorf_test.gif" alt="Ganondorf Mixamo test" width="500">
+          <p class="image-caption">An initial test for Ganondorf's animation on Mixamo</p>
+        </div>
+
+        <p>***<em>Particle effects writeup coming soon!</em>***</p>
 
         <h2>Product</h2>
         <p>Twilight Crisis was featured in Sigma Phi Epsilon's booth for the entirety of Spring Carnival 2018, which ran from Thursday, April 19th through Sunday, April 22nd.
