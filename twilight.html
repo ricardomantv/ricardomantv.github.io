@@ -54,8 +54,8 @@
         </div>
 
         <h2>Overview</h2>
-        <p><strong><em>Role:</em></strong> Solo Programmer/Artist</p>
-        <p><strong><em>Tools Used:</em></strong> Unity3D, Autodesk Maya, Blender, Adobe Photoshop</p>
+        <p><strong><em>Role:</em></strong> Solo Programmer/3D Artist</p>
+        <p><strong><em>Tools Used:</em></strong> Unity3D, Autodesk Maya, Adobe Photoshop</p>
         <p><strong><em>Awards:</em></strong> 3rd Place, Fraternity Division, Carnegie Mellon Spring Carnival 2018</p>
         <p>Twilight Crisis is a 2-player arcade shooter-style game featured in Sigma Phi Epsilon's booth for CMU's Spring Carnival 2018.
            SigEp's booth theme was based on <em>The Legend of Zelda: Twilight Princess</em>, and the game was inspired by the <em>Time Crisis</em> series but
@@ -79,6 +79,7 @@
         </p>
 
         <h2>Process</h2>
+        <h4>Camera Movement</h4>
         <p>The game follows the same general pattern of Time Crisis where players travel through the level and stop at specific areas where enemies begin to appear. The players
            must clear the area of all enemies before they are brought to the next area. To achieve this level scrolling effect, I set waypoints throughout the level that would
            denote the position and rotation of the camera for areas where enemies would appear, and wrote a rails script that calculated a bezier curve between the points for
@@ -90,6 +91,7 @@
           <p class="image-caption">A path of waypoints (white spheres) to form the camera's bezier curve</p>
         </div>
 
+        <h4>Enemy Models/Animation</h4>
         <p>All of the enemies featured in the game are the direct models from <em>Legend of Zelda: Twilight Princess</em>. While most of the character models came pre-textured, the
         the models did not come rigged or animated. For the non-humanoid characters, I manually rigged and animated the characters myself. Due to time constraints, I only used
         linear skin binding with minor skin weight painting.
@@ -109,7 +111,51 @@
           <p class="image-caption">An initial test for Ganondorf's animation on Mixamo</p>
         </div>
 
-        <p>***<em>Particle effects writeup coming soon!</em>***</p>
+        <h4>Aesthetics and Visual Effects</h4>
+        <p>I wanted the aesthetic and tone of this game to match <em>Twilight Princess</em> as closely as possible, especially since I did not have access to most environment models from
+           the game. I used references images of <em>Twilight Princess</em> to inspire the layout and color scheme of the different areas, as seen below.
+        </p>
+
+        <p>The iconic means of transportation between different areas of <em>Twilight Princess</em> are the Twilight Portals, which was how I decided to introduce transitions between certain
+           levels of my booth game.
+         </p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/twilight/game_portal.gif" alt="My take on the Hyrule Castle" width="500">
+              <p class="image-caption">My recreation of the portal to the Twilight Realm.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="image">
+              <img src="img/twilight/twilight_portal.gif" alt="Hyrule Castle from the game" width="500">
+              <p class="image-caption">The portal from the actual game.</p>
+            </div>
+          </div>
+        </div>
+
+        <p>The effect is comprised of several layers of particle systems. The outside is a singular sprite of the outer part of the portal, emitted one particle at a time. The color fades
+           from white to black and back to white over its lifetime to give the effect of color pulsation for the neon lines. The black area within the center of the portal is an animated
+           smoke sprite sheet to give a subtle effect of swirling/movement rather than being still. The outer ring of the center is the default particle, colored neon blue-green and set to
+           emit from a circle. The inner circles are a white circle sprite made in Photoshop that I have set to grow over time and also colored neon green. Lastly, the black twilight squares
+           are Unity's default blank sprite particle colored black and emitting from the center circle.
+        </p>
+
+        <p>The other big effect in the game are Ganondorf's and Midna's projectiles. The shadow ball (shown below) is what Ganondorf throws at the players in the final fight, and Midna's (the
+           second player's character) shoots a similar looking ball of twilight magic.
+        </p>
+
+        <div class="image">
+          <img src="img/twilight/shadow_ball.gif" alt="Ganondorf's shadow ball" width="500">
+          <p class="image-caption">Ganondorf's shadow ball (as well as an ambient twilight effect from the level)</p>
+        </div>
+
+        <p>This effect is achieved in a similar way to the inside of the Twilight portal, where the outer ring is the same as the inner rings from the portal, and the inside is filled with a
+           dynamic smoke particle effect. Ganondorf's ball has an additional particle system where the particles stretch into the center of the ball from the outer rim (these particles simply
+           have a negative velocity to send them inside the center of the spawn radius). These projectiles are rendered with billboard alignment angled to the camera's view, to give the
+           illusion that they are three-dimensional objects, and also have three-dimensional sphere colliders for collision purposes.
+        </p>
 
         <h2>Product</h2>
         <p>Twilight Crisis was featured in Sigma Phi Epsilon's booth for the entirety of Spring Carnival 2018, which ran from Thursday, April 19th through Sunday, April 22nd.
